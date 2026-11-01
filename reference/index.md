@@ -3,7 +3,7 @@
 ## Launch the app
 
 - [`run_app()`](https://etc5523-2026.github.io/etc5523-assignment-4-aatishprasad0/reference/run_app.md)
-  : Launch the PLV library explorer app
+  : Launch the Library rankings explorer app
 
 ## Calculate and rank metrics
 
