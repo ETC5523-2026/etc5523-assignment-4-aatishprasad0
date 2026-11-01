@@ -1,3 +1,4 @@
 inst/doc
 vignettes/*.html
 .Rhistory
+docs
