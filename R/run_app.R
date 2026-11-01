@@ -1,4 +1,4 @@
-#' Launch the PLV library explorer app
+#' Launch the Library rankings explorer app
 #'
 #' Opens the Shiny app bundled with the package.
 #' @export

@@ -80,7 +80,7 @@ visits and program attendance.
 ## Documentation
 
 Full documentation, including a getting-started vignette:
-<!-- Add URL here-->
+<https://etc5523-2026.github.io/etc5523-assignment-4-aatishprasad0/>
 
 ## AI-use declaration
 
