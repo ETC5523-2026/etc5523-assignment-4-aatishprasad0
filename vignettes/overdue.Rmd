@@ -1,0 +1,63 @@
+---
+title: "Getting started with overdue"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with overdue}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+overdue asks one question: **Does the ranking of Victorian public library services change depending on how library usage is measured?** It is designed to be used by people learning data analysis, particularly those exploring how the choice of metric can change a conclusion, and how switching between metrics interactively reveals this better than a single static chart.
+
+## Installation
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("ETC5523-2026/etc5523-assignment-4-aatishprasad0")
+```
+
+The repository is called `etc5523-assignment-4-aatishprasad0`, but the package itself is called **overdue**: load it with `library(overdue)`.
+
+```{r setup}
+library(overdue)
+```
+
+## Launch the app
+
+```{r, eval = FALSE}
+run_app()
+```
+
+The app opens on **Start here**, which explains the question, the controls and each metric. Open **Explore the rankings** and use the controls on the left:
+
+- **Metric A:** the metric to rank services on.
+- **Metric B:** a second metric, used in *Compare two metrics*.
+- **Year:** 2022-23, 2023-24 or 2024-25.
+
+## Interpret the outputs
+
+**One metric** ranks every service on Metric A. The dashed amber line is the municipal benchmark; bars past it are above the benchmark.
+
+**Compare two metrics** plots each service on both metrics. Services in the *High on A only* or *High on B only* corners are the ones whose standing depends on the metric chosen. The rank correlation above the chart summarises this: close to 1 means the metrics agree; close to 0 means "busiest" depends on the metric.
+
+For example, the leaders on total branch visits are large services:
+
+```{r}
+head(plv_metric("branch_visits"), 3)
+```
+
+but per resident, smaller and inner-city services lead:
+
+```{r}
+head(plv_metric("visits_per_person"), 3)
+```
+
+Keep in mind that visits count events, not people, and that services which did
+not report a measure are left out of its ranking.

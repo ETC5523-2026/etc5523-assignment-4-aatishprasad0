@@ -1,0 +1,89 @@
+
+# overdue
+
+overdue helps **people learning data analysis** investigate one
+question:
+
+> **Does the ranking of Victorian public library services change
+> depending on how library usage is measured?**
+
+“Which library is busiest?” sounds like it has one answer. But total
+visits mostly reflect how many people a service covers, while
+per-resident measures highlight libraries that are used heavily compared
+with the number of people they serve. The package bundles three years of
+library statistics, a function that calculates and ranks six usage
+metrics, and a Shiny app for comparing how the rankings change.
+
+## Installation
+
+Install the development version from GitHub:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("ETC5523-2026/etc5523-assignment-4-aatishprasad0")
+```
+
+The repository is called `etc5523-assignment-4-aatishprasad0`, but the
+package itself is called **overdue**: load it with `library(overdue)`.
+
+## Launch the app
+
+``` r
+overdue::run_app()
+```
+
+The app explains the question, its controls and each metric on its
+**Start here** page. For a guided walkthrough of both views and how to
+interpret them, see the [Getting
+started](https://ETC5523-2026.github.io/etc5523-assignment-4-aatishprasad0/articles/overdue.html)
+vignette.
+
+## Example
+
+`plv_metric()` calculates and ranks one of six usage metrics for every
+municipal library service:
+
+``` r
+library(overdue)
+head(plv_metric("visits_per_person"), 5)
+#> # A tibble: 5 × 4
+#>   service     value  rank pct_of_benchmark
+#>   <chr>       <dbl> <int>            <dbl>
+#> 1 Yarra        6.21     1             179.
+#> 2 Hobsons Bay  6.19     2             179.
+#> 3 Melbourne    6.17     3             178.
+#> 4 Boroondara   5.46     4             157.
+#> 5 Gannawarra   5.21     5             150.
+```
+
+`plv_metric_labels()` lists all six metrics and their definitions.
+
+## Data
+
+`plv_services` contains selected measures for 52 Victorian public
+library services (including the statewide total and Vision Australia) in
+2022-23, 2023-24 and 2024-25: municipal population, branch, mobile and
+outreach visits, active borrowers, physical and eBook loans, website
+visits and program attendance.
+
+- **Source:** Public Libraries Victoria, [*2024-25 PLV Annual
+  Statistical Survey: Final Datasets 2022-23 to
+  2024-25*](https://www.plv.org.au/resources/earlier-reports-and-surveys/).
+- **Preparation:** the script in `data-raw/plv_services.R` imports the
+  spreadsheet, matches columns by name across the three yearly sheets,
+  recodes renamed services and checks there is one row per service per
+  year.
+- **Limitations:** visits count events, not unique people; branch visits
+  exclude mobile, outreach and online use; and services that did not
+  report a measure are left out of its ranking.
+
+## Documentation
+
+Full documentation, including a getting-started vignette:
+<!-- Add URL here-->
+
+## AI-use declaration
+
+I used ClaudeAI & ChatGPT for css/ styling assistance and to help in bug
+fixing and error resolution. I checked and revised all the generated
+material.

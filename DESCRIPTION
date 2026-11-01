@@ -1,0 +1,26 @@
+Package: overdue
+Title: Explore Victorian Public Library Statistics
+Version: 0.0.0.9000
+Authors@R: 
+    person("Aatish", "Prasad", , "apra0076@student.monash.edu", role = c("aut", "cre"))
+Description: Data from the Public Libraries Victoria Annual Statistical
+    Survey (2022-23 to 2024-25), summary functions and a Shiny app for
+    comparing Victorian public library services.
+License: MIT + file LICENSE
+Config/roxygen2/version: 8.0.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: 
+    R (>= 4.1)
+LazyData: true
+Imports: 
+    bslib,
+    dplyr,
+    ggplot2,
+    rlang,
+    scales,
+    shiny
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
