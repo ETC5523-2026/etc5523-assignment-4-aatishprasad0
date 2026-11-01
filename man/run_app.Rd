@@ -2,10 +2,19 @@
 % Please edit documentation in R/run_app.R
 \name{run_app}
 \alias{run_app}
-\title{Launch the PLV library explorer app}
+\title{Launch the Library rankings explorer app}
 \usage{
 run_app()
 }
+\value{
+Called for its side effect of opening the app in a browser or the
+RStudio/Positron viewer. Returns nothing useful.
+}
 \description{
 Opens the Shiny app bundled with the package.
+}
+\examples{
+if (interactive()) {
+  run_app()
+}
 }
