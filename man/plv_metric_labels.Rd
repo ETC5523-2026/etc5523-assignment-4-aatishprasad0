@@ -8,10 +8,11 @@ plv_metric_labels()
 }
 \value{
 A tibble with one row per metric and columns \code{metric} (the key to
-pass to \code{\link[=plv_metric]{plv_metric()}}), \code{label}, \code{definition} and \code{concept}.
+pass to \code{\link[=plv_metric]{plv_metric()}}), \code{label} and \code{definition}.
 }
 \description{
-Lists the metrics that \code{\link[=plv_metric]{plv_metric()}} can calculate, with a readable ' label, a plain-language definition and the analytical idea each one ' illustrates.
+Lists the metrics that \code{\link[=plv_metric]{plv_metric()}} can calculate, with a readable
+label and a plain-language definition for each.
 Use it to see the options, or to label app controls and plots consistently.
 }
 \examples{

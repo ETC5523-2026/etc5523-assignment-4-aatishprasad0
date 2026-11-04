@@ -1,10 +1,11 @@
 #' Library usage metrics available in overdue
 #'
-#' Lists the metrics that [plv_metric()] can calculate, with a readable ' label, a plain-language definition and the analytical idea each one ' illustrates.
+#' Lists the metrics that [plv_metric()] can calculate, with a readable
+#' label and a plain-language definition for each.
 #' Use it to see the options, or to label app controls and plots consistently.
 #'
 #' @return A tibble with one row per metric and columns `metric` (the key to
-#'   pass to [plv_metric()]), `label`, `definition` and `concept`.
+#' pass to [plv_metric()]), `label` and `definition`.
 #' @export
 #'
 #' @examples
@@ -21,7 +22,7 @@ plv_metric_labels <- function() {
     ),
     label = c(
       "Branch visits (total)",
-      "Branch visits per resident",
+      "Branch visits per resident", 
       "In-person contacts per resident",
       "Active borrowers per 100 residents",
       "Digital share of loans (%)",
@@ -34,14 +35,6 @@ plv_metric_labels <- function() {
       "Members who borrowed in the year, per 100 residents.",
       "eBook loans as a percentage of physical plus eBook loans.",
       "Website visits divided by municipal population. Counts visits, not users."
-    ),
-    concept = c(
-      "Raw counts",
-      "Normalisation",
-      "Metric definition",
-      "Rates",
-      "Proportions",
-      "Proxy measures"
     )
   )
 }
